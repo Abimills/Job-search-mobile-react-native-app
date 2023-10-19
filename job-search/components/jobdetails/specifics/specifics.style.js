@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     color: COLORS.gray,
     fontFamily: FONT.regular,
     marginLeft: SIZES.small,
+    
   },
 });
 

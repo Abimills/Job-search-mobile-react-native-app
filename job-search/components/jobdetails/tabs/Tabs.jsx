@@ -1,12 +1,24 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-
+import { View, Text,TouchableOpacity,FlatList} from 'react-native'
+import { SIZES } from '../../../constants'
 import styles from './tabs.style'
 
-const Tabs = () => {
+const Tabs = ({tabs,activeTab,setActiveTab}) => {
   return (
-    <View>
-      <Text>Tabs</Text>
+    <View style={styles.container}>
+      <FlatList   
+      data={tabs}
+      renderItem={({item}) => (
+        <TouchableOpacity style={styles.btn(item,activeTab)} onPress={() => setActiveTab(item)}>
+          <Text style={styles.btnText(item,activeTab)}>{item}</Text>
+
+        </TouchableOpacity>
+      )}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      keyExtractor={item => item}
+      contentContainerStyle={{columnGap: SIZES.small /2}}
+      />
     </View>
   )
 }
