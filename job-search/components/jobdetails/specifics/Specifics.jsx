@@ -1,28 +1,25 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from "react";
+import { View, Text } from "react-native";
 
-import styles from './specifics.style'
+import styles from "./specifics.style";
 
-const Specifics = ({title,points}) => {
-
+const Specifics = ({ title, points }) => {
   return (
-    <View style = {styles.container}>
+    <View style={styles.container}>
       <Text style={styles.title}>{title}:</Text>
-      <View style = {styles.pointsContainer}>
-      {
-        points?.map((item) => {
-        return (
-          <View style={styles.pointWrapper} key={item }>
-  <View >
-
-  <Text style={styles.pointText}> {item}</Text>
-  </View>
-</View>)
-})
-        }
-        </View>
+      <View style={styles.pointsContainer}>
+        {points?.map((item) => {
+          return (
+            <View style={styles.pointWrapper} key={item}>
+              <View>
+                <Text style={styles.pointText}> {item}</Text>
+              </View>
+            </View>
+          );
+        })}
+      </View>
     </View>
-  )
-}
+  );
+};
 
-export default Specifics
+export default Specifics;
